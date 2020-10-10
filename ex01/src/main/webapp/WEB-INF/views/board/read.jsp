@@ -1,30 +1,29 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>    
 <%@ page session="false"%>
 <!DOCTYPE html>
 <html>
 <head>
+
+<!-- 이 부분이 있어야 레디 함수가 작동 ($(document).ready(function(){) -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
+
+</head>
+<body>
+
 <script type="text/javascript">
-
-${document}.ready(function(){
-
-	/*아래의 소스는
-	var formObj = ${"form[role='form']"};
+$(document).ready(function(){
 	
-	<form> 태그를 의미
-	<form role="form" method="post">
-	<input type='hidden' name='bno' value="${boardVO.bno}">
-	</form>
-	*/ 
-	var formObj = ${"form[role='form']"};
+	var formObj = $("form[role='form']");
 
 	console.log(formObj);
-
+	
+	
 	$(".btn-warning").on("click", function(){
 		formObj.attr("action", "/board/modify");
 		formObj.attr("method","get");
@@ -41,9 +40,10 @@ ${document}.ready(function(){
 		});
 	
 });
+
+
 </script>
-</head>
-<body>
+
 
 <form role="form" method="post">
 
